@@ -13,3 +13,6 @@ Ubah dict `ATURAN` di `pajak_engine.py` (tarif, batas, tanggal mulai pemungutan 
 Isi `FASTWORK_URL` di `app.py` untuk menampilkan tautan ke listing Fastwork Anda.
 
 Hasil adalah estimasi, bukan nasihat pajak resmi.
+
+Click below
+https://project-umkm-brb5jy4fqnsngv8irsjchv.streamlit.app/
