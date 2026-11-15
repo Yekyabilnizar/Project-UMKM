@@ -157,7 +157,7 @@ def progress(label, used, total, hint=""):
 
 
 def show_chart(fig):
-    cfg = {"displayModeBar": False}
+    cfg = {"displayModeBar": False, "scrollZoom": False, "doubleClick": "reset", "showAxisDragHandles": False}
     try:
         st.plotly_chart(fig, width="stretch", config=cfg)
     except TypeError:
@@ -177,9 +177,10 @@ def style(fig, h=330, ytitle=None, legend=True):
         font=dict(family="Inter, Segoe UI, sans-serif", size=12, color="#334155"),
         legend=dict(orientation="h", yanchor="bottom", y=1.0, x=0, font=dict(size=12)) if legend else dict(visible=False),
         showlegend=legend, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        separators=",.", hoverlabel=dict(bgcolor="white", font_size=12, bordercolor="#e2e8f0"), bargap=0.28)
-    fig.update_xaxes(showgrid=False, linecolor="#e2e8f0", tickfont=dict(size=11))
-    fig.update_yaxes(gridcolor="#eef2f7", zeroline=False, title_text=ytitle, tickfont=dict(size=11))
+        separators=",.", hoverlabel=dict(bgcolor="white", font_size=12, bordercolor="#e2e8f0"), bargap=0.28,
+        dragmode=False)   # kunci zoom/geser agar tampilan tidak berubah tanpa sengaja
+    fig.update_xaxes(showgrid=False, linecolor="#e2e8f0", tickfont=dict(size=11), fixedrange=True)
+    fig.update_yaxes(gridcolor="#eef2f7", zeroline=False, title_text=ytitle, tickfont=dict(size=11), fixedrange=True)
     return fig
 
 
