@@ -584,7 +584,7 @@ with t5:
                      "Sumber media menyebut tanggal berbeda, jadi cek pengumuman resmi DJP dan ubah di `pajak_engine.py` bila perlu.")
 
 _nama = f'<a href="{URL_PEMBUAT}" target="_blank">{NAMA_PEMBUAT}</a>' if URL_PEMBUAT else f"<b>{NAMA_PEMBUAT}</b>"
-st.markdown(f'<div class="credit">Created by {anonymass}</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="credit">Created by anonymass </div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="disc"><b>Penting:</b> Hasil adalah <b>estimasi</b> untuk edukasi dan perencanaan, bukan nasihat pajak resmi.
