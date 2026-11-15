@@ -14,6 +14,8 @@ from pajak_engine import ATURAN, SUBJEK, BULAN, hitung_pajak, kurva_pajak, rp, p
 # ------------------------------------------------------------------
 FASTWORK_URL = ""          # isi tautan listing Fastwork Anda
 NAMA_APP = "PajakSeller"
+NAMA_PEMBUAT = "Yeky Abil Nizar"                      # ganti sesuai nama Anda
+URL_PEMBUAT = "https://github.com/Yekyabilnizar"      # kosongkan "" jika tidak ingin ada tautan
 
 st.set_page_config(page_title=f"{NAMA_APP} — Kalkulator Pajak Penjual Online & UMKM", page_icon="🧾",
                    layout="wide", initial_sidebar_state="expanded")
@@ -95,6 +97,15 @@ html, body, .stApp, button, input, textarea, [class*="css"] {font-family:'Inter'
 /* Insight */
 .ins {display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #f1f5f9; font-size:13.5px; line-height:1.5; color:#334155;}
 .ins:last-child {border-bottom:none;} .ins .d {font-size:17px; line-height:1.3;}
+
+/* Badge pembuat (kanan bawah, di sebelah kiri tombol Manage app) */
+.credit {position:fixed; bottom:14px; right:190px; z-index:999990; background:#0b1f3a; color:#e2e8f0;
+         padding:9px 16px; border-radius:999px; font-size:12.5px; font-weight:500; letter-spacing:.01em;
+         box-shadow:0 6px 18px rgba(11,31,58,.28); border:1px solid rgba(255,255,255,.12); white-space:nowrap;}
+.credit b {color:#5eead4; font-weight:700;}
+.credit a {color:#5eead4 !important; font-weight:700; text-decoration:none;}
+.credit a:hover {text-decoration:underline;}
+@media (max-width:700px) {.credit {right:12px; bottom:62px; font-size:11.5px; padding:7px 13px;}}
 
 /* Judul bagian */
 .sect {font-size:15px; font-weight:700; color:#0f172a; margin:0 0 2px 0;}
@@ -530,6 +541,9 @@ with t5:
         with st.expander("Kapan pemungutan PPh 22 marketplace mulai berlaku?"):
             st.write(f"Pengaturan awal alat ini adalah bulan ke-{ATURAN['pph22_marketplace']['bulan_mulai_2026']} tahun 2026. "
                      "Sumber media menyebut tanggal berbeda, jadi cek pengumuman resmi DJP dan ubah di `pajak_engine.py` bila perlu.")
+
+_nama = f'<a href="{URL_PEMBUAT}" target="_blank">{NAMA_PEMBUAT}</a>' if URL_PEMBUAT else f"<b>{NAMA_PEMBUAT}</b>"
+st.markdown(f'<div class="credit">Created by {_nama}</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="disc"><b>Penting:</b> Hasil adalah <b>estimasi</b> untuk edukasi dan perencanaan, bukan nasihat pajak resmi.
