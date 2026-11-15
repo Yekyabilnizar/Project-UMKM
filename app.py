@@ -28,8 +28,17 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 html, body, .stApp, button, input, textarea, [class*="css"] {font-family:'Inter','Segoe UI',Roboto,sans-serif;}
-#MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] {display:none !important;}
+#MainMenu, footer, [data-testid="stDecoration"], [data-testid="stToolbarActions"],
+[data-testid="stAppDeployButton"], [data-testid="stMainMenu"], .stDeployButton {display:none !important;}
 [data-testid="stHeader"] {background:transparent;}
+/* Pastikan tombol buka/tutup panel input selalu terlihat */
+[data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"],
+[data-testid="collapsedControl"] {display:flex !important; visibility:visible !important; opacity:1 !important;
+    z-index:999999; background:#0f766e; border-radius:10px; box-shadow:0 4px 14px rgba(15,118,110,.35);}
+[data-testid="stSidebarCollapsedControl"] button, [data-testid="stExpandSidebarButton"] button,
+[data-testid="collapsedControl"] button {color:#fff !important;}
+[data-testid="stSidebarCollapsedControl"] svg, [data-testid="stExpandSidebarButton"] svg,
+[data-testid="collapsedControl"] svg {fill:#fff !important; color:#fff !important;}
 .block-container {padding-top:1.2rem; padding-bottom:3rem; max-width:1320px;}
 [data-testid="stSidebar"] {background:#ffffff; border-right:1px solid #e2e8f0;}
 [data-testid="stSidebar"] .block-container {padding-top:1rem;}
@@ -233,7 +242,7 @@ st.markdown(f"""
 <div class="hero">
   <div class="eyebrow">Kalkulator perpajakan</div>
   <h1>Pajak Penjual Online & UMKM</h1>
-  <p>Ketahui kewajiban pajak, kredit PPh 22 marketplace, dan laba bersih setelah pajak. Hasil langsung berubah saat Anda mengisi data di panel kiri.</p>
+  <p>Ketahui kewajiban pajak, kredit PPh 22 marketplace, dan laba bersih setelah pajak. Hasil langsung berubah saat Anda mengisi data di panel input (kiri). Jika panel tertutup, klik tombol hijau <b>»</b> di pojok kiri atas untuk membukanya kembali.</p>
   <span class="chip">PP 20/2026</span><span class="chip">PMK 37/2025</span>
   <span class="chip">Aturan per {ATURAN['diperbarui']}</span><span class="chip">Estimasi, bukan nasihat pajak</span>
 </div>
