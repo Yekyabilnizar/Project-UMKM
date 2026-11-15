@@ -41,87 +41,122 @@ html, body, .stApp, button, input, textarea, [class*="css"] {font-family:'Inter'
 [data-testid="collapsedControl"] button {color:#fff !important;}
 [data-testid="stSidebarCollapsedControl"] svg, [data-testid="stExpandSidebarButton"] svg,
 [data-testid="collapsedControl"] svg {fill:#fff !important; color:#fff !important;}
-.block-container {padding-top:1.2rem; padding-bottom:3rem; max-width:1320px;}
-[data-testid="stSidebar"] {background:#ffffff; border-right:1px solid #e2e8f0;}
+
+/* Latar halaman: gradasi lembut */
+.stApp {background:
+    radial-gradient(1100px 520px at 92% -8%, rgba(99,102,241,.13), transparent 60%),
+    radial-gradient(900px 520px at -6% 6%, rgba(20,184,166,.15), transparent 58%),
+    radial-gradient(800px 600px at 50% 110%, rgba(245,158,11,.08), transparent 60%),
+    #f4f7fb;}
+.block-container {padding-top:1.2rem; padding-bottom:4rem; max-width:1320px;}
+[data-testid="stSidebar"] {background:linear-gradient(180deg,#ffffff 0%,#f1f7f6 100%); border-right:1px solid #dbe7e5;}
 [data-testid="stSidebar"] .block-container {padding-top:1rem;}
 
 /* Hero */
-.hero {position:relative; overflow:hidden; background:linear-gradient(115deg,#0b1f3a 0%,#0f4c5c 55%,#0f766e 100%);
-       color:#fff; border-radius:20px; padding:26px 32px; margin-bottom:18px;
-       box-shadow:0 12px 32px rgba(11,31,58,.22);}
-.hero:after {content:""; position:absolute; right:-60px; top:-80px; width:300px; height:300px; border-radius:50%;
-             background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 70%);}
-.hero .eyebrow {font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.75; font-weight:600;}
-.hero h1 {margin:6px 0 4px 0; font-size:30px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1.15;}
-.hero p {margin:0; opacity:.88; font-size:14.5px; max-width:720px;}
-.chip {display:inline-block; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22);
-       border-radius:999px; padding:4px 13px; font-size:11.5px; margin:14px 8px 0 0; font-weight:500;}
+.hero {position:relative; overflow:hidden; color:#fff; border-radius:22px; padding:30px 36px; margin-bottom:20px;
+       background:linear-gradient(118deg,#0b1f3a 0%,#1e3a8a 42%,#0f766e 100%);
+       box-shadow:0 18px 40px rgba(30,58,138,.28);}
+.hero:before {content:""; position:absolute; right:-70px; top:-110px; width:340px; height:340px; border-radius:50%;
+              background:radial-gradient(circle,rgba(94,234,212,.35),rgba(94,234,212,0) 68%);}
+.hero:after {content:""; position:absolute; right:140px; bottom:-150px; width:300px; height:300px; border-radius:50%;
+             background:radial-gradient(circle,rgba(129,140,248,.40),rgba(129,140,248,0) 68%);}
+.hero > * {position:relative; z-index:1;}
+.hero .eyebrow {display:inline-block; font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+                color:#5eead4; background:rgba(94,234,212,.12); border:1px solid rgba(94,234,212,.3); padding:4px 12px; border-radius:999px;}
+.hero h1 {margin:12px 0 6px 0; font-size:34px; font-weight:800; color:#fff; letter-spacing:-.025em; line-height:1.12;}
+.hero p {margin:0; opacity:.9; font-size:14.5px; max-width:760px; line-height:1.6;}
+.chip {display:inline-block; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(4px);
+       border-radius:999px; padding:5px 14px; font-size:11.5px; margin:16px 8px 0 0; font-weight:500;}
 
-/* Kartu */
-.main-card {background:#fff; border:1px solid #e2e8f0; border-left:6px solid #0f766e; border-radius:18px;
-            padding:22px 26px; box-shadow:0 2px 10px rgba(15,23,42,.05); height:100%;}
-.main-card .l {font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#64748b; font-weight:700;}
-.main-card .v {font-size:40px; font-weight:800; color:#0b1f3a; letter-spacing:-.02em; margin:6px 0 2px 0; line-height:1.1;}
+/* Kartu hasil utama */
+.main-card {position:relative; overflow:hidden; border:1px solid #cdeee9; border-radius:20px; padding:24px 28px; height:100%;
+            background:linear-gradient(135deg,#ffffff 0%,#effcf9 60%,#eef2ff 100%);
+            box-shadow:0 10px 26px rgba(15,118,110,.12);}
+.main-card:before {content:""; position:absolute; left:0; top:0; bottom:0; width:7px; background:linear-gradient(180deg,#14b8a6,#6366f1);}
+.main-card .l {font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:#0f766e; font-weight:700;}
+.main-card .v {font-size:44px; font-weight:800; letter-spacing:-.03em; margin:6px 0 2px 0; line-height:1.1;
+               background:linear-gradient(90deg,#0b1f3a,#0f766e 60%,#4f46e5); -webkit-background-clip:text; background-clip:text; color:transparent;}
 .main-card .s {font-size:13px; color:#64748b;}
-.main-card .row {display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-top:1px solid #f1f5f9; font-size:13.5px;}
-.main-card .row:first-of-type {margin-top:14px;}
+.main-card .row {display:flex; justify-content:space-between; align-items:center; padding:11px 0; border-top:1px dashed #cfe3e0; font-size:13.5px; color:#334155;}
+.main-card .row:first-of-type {margin-top:16px;}
 .main-card .row b {font-weight:700; color:#0f172a;}
-.pill {display:inline-block; padding:3px 11px; border-radius:999px; font-size:12px; font-weight:700;}
-.pill.bad {background:#fee2e2; color:#b91c1c;} .pill.good {background:#dcfce7; color:#15803d;} .pill.neutral {background:#e2e8f0; color:#475569;}
+.pill {display:inline-block; padding:4px 12px; border-radius:999px; font-size:12px; font-weight:700;}
+.pill.bad {background:#fee2e2; color:#b91c1c;} .pill.good {background:#dcfce7; color:#15803d;} .pill.neutral {background:#e0e7ff; color:#4338ca;}
 
-.kpi {background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:16px 18px; height:100%;
-      box-shadow:0 1px 3px rgba(15,23,42,.04); transition:transform .15s, box-shadow .15s;}
-.kpi:hover {transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.08);}
-.kpi .top {display:flex; align-items:center; gap:8px;}
-.kpi .ic {width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:15px;}
-.kpi .l {font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:#64748b; font-weight:600;}
-.kpi .v {font-size:22px; font-weight:800; color:#0f172a; margin-top:10px; line-height:1.15; letter-spacing:-.01em;}
-.kpi .s {font-size:12px; color:#94a3b8; margin-top:4px;}
-.kpi.good .v {color:#15803d;} .kpi.bad .v {color:#b91c1c;}
+/* KPI */
+.kpi {position:relative; overflow:hidden; border:1px solid #e2e8f0; border-radius:18px; padding:18px 20px; height:100%;
+      box-shadow:0 4px 14px rgba(15,23,42,.06); transition:transform .18s, box-shadow .18s;}
+.kpi:before {content:""; position:absolute; left:0; right:0; top:0; height:5px; background:var(--ac,#0f766e);}
+.kpi:hover {transform:translateY(-3px); box-shadow:0 14px 28px rgba(15,23,42,.12);}
+.kpi .top {display:flex; align-items:center; gap:10px;}
+.kpi .ic {width:34px; height:34px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:17px;
+          box-shadow:inset 0 0 0 1px rgba(15,23,42,.05);}
+.kpi .l {font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#64748b; font-weight:700;}
+.kpi .v {font-size:23px; font-weight:800; color:#0f172a; margin-top:12px; line-height:1.15; letter-spacing:-.015em;}
+.kpi .s {font-size:12px; color:#7b8aa0; margin-top:5px;}
+.kpi.good .v {color:#15803d;} .kpi.bad .v {color:#be123c;}
 
 /* Progress */
-.prog-card {background:#fff; border:1px solid #e2e8f0; border-radius:18px; padding:20px 24px; height:100%;
-            box-shadow:0 2px 10px rgba(15,23,42,.05);}
-.prog-card h4 {margin:0 0 14px 0; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:#64748b;}
-.prog {margin-bottom:16px;} .prog:last-child {margin-bottom:0;}
-.prog .t {display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px; color:#334155; font-weight:600;}
+.prog-card {border:1px solid #e0e7ff; border-radius:20px; padding:22px 26px; height:100%;
+            background:linear-gradient(135deg,#ffffff 0%,#f5f7ff 100%); box-shadow:0 10px 26px rgba(79,70,229,.10);}
+.prog-card h4 {margin:0 0 16px 0; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:#4f46e5; font-weight:700;}
+.prog {margin-bottom:18px;} .prog:last-child {margin-bottom:0;}
+.prog .t {display:flex; justify-content:space-between; font-size:13px; margin-bottom:7px; color:#334155; font-weight:600;}
 .prog .t span {font-weight:500; color:#64748b;}
-.bar {height:10px; background:#eef2f7; border-radius:999px; overflow:hidden;}
+.bar {height:11px; background:#e6ebf5; border-radius:999px; overflow:hidden; box-shadow:inset 0 1px 2px rgba(15,23,42,.08);}
 .bar i {display:block; height:100%; border-radius:999px;}
 
 /* Catatan */
-.note {border-radius:12px; padding:11px 16px; margin:8px 0; font-size:13.5px; border-left:5px solid; line-height:1.55;}
-.n-ok {background:#f0fdf4; border-color:#22c55e;} .n-info {background:#eff6ff; border-color:#3b82f6;}
-.n-warn {background:#fffbeb; border-color:#f59e0b;} .n-danger {background:#fef2f2; border-color:#ef4444;}
+.note {border-radius:14px; padding:12px 18px; margin:10px 0; font-size:13.5px; border-left:6px solid; line-height:1.55; box-shadow:0 2px 8px rgba(15,23,42,.04);}
+.n-ok {background:linear-gradient(90deg,#ecfdf5,#fff); border-color:#10b981;}
+.n-info {background:linear-gradient(90deg,#eff6ff,#fff); border-color:#3b82f6;}
+.n-warn {background:linear-gradient(90deg,#fffbeb,#fff); border-color:#f59e0b;}
+.n-danger {background:linear-gradient(90deg,#fef2f2,#fff); border-color:#ef4444;}
 
 /* Insight */
-.ins {display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #f1f5f9; font-size:13.5px; line-height:1.5; color:#334155;}
-.ins:last-child {border-bottom:none;} .ins .d {font-size:17px; line-height:1.3;}
+.ins {display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #eef2f7; font-size:13.5px; line-height:1.5; color:#334155;}
+.ins:last-child {border-bottom:none;}
+.ins .d {flex:0 0 34px; height:34px; border-radius:11px; background:linear-gradient(135deg,#ccfbf1,#e0e7ff); display:flex; align-items:center; justify-content:center; font-size:16px;}
+
+/* Judul bagian */
+.sect {font-size:15.5px; font-weight:700; color:#0f172a; margin:0 0 2px 0; display:flex; align-items:center;}
+.sect:before {content:""; display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:10px;
+              background:linear-gradient(135deg,#14b8a6,#6366f1);}
+.sub {font-size:12.5px; color:#64748b; margin:0 0 8px 20px;}
+
+/* Container kartu grafik */
+[data-testid="stVerticalBlockBorderWrapper"] {border-radius:18px;}
+[data-testid="stVerticalBlockBorderWrapper"]:has(.sect) {background:#fff; border:1px solid #e3e9f3 !important; box-shadow:0 6px 18px rgba(15,23,42,.06);}
+
+/* Tab bentuk pil */
+.stTabs [data-baseweb="tab-list"] {gap:8px; border-bottom:none; padding:2px 0 10px 0;}
+.stTabs [data-baseweb="tab"] {padding:9px 20px; font-weight:600; color:#475569; border-radius:999px; background:#fff; border:1px solid #e2e8f0; height:auto;}
+.stTabs [aria-selected="true"] {background:linear-gradient(135deg,#0f766e,#2563eb) !important; color:#fff !important; border-color:transparent !important;
+                                box-shadow:0 6px 16px rgba(37,99,235,.30);}
+.stTabs [data-baseweb="tab-highlight"], .stTabs [data-baseweb="tab-border"] {display:none;}
+
+/* Tombol unduh */
+.stDownloadButton button {background:linear-gradient(135deg,#0f766e,#2563eb); color:#fff; border:none; border-radius:12px; font-weight:600; padding:.5rem 1.1rem;
+                          box-shadow:0 6px 14px rgba(37,99,235,.25);}
+.stDownloadButton button:hover {filter:brightness(1.08); color:#fff;}
+.stDownloadButton button p {color:#fff;}
+
+/* Sidebar */
+.side-title {font-size:21px; font-weight:800; color:#0b1f3a; letter-spacing:-.015em; margin-bottom:2px;}
+.side-sec {display:inline-block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#0f766e; font-weight:700;
+           background:#d9f6f1; padding:5px 12px; border-radius:8px; margin:22px 0 6px 0;}
 
 /* Badge pembuat (kanan bawah, di sebelah kiri tombol Manage app) */
-.credit {position:fixed; bottom:14px; right:190px; z-index:999990; background:#0b1f3a; color:#e2e8f0;
+.credit {position:fixed; bottom:14px; right:190px; z-index:999990; background:linear-gradient(135deg,#0b1f3a,#1e3a8a); color:#e2e8f0;
          padding:9px 16px; border-radius:999px; font-size:12.5px; font-weight:500; letter-spacing:.01em;
-         box-shadow:0 6px 18px rgba(11,31,58,.28); border:1px solid rgba(255,255,255,.12); white-space:nowrap;}
+         box-shadow:0 8px 20px rgba(11,31,58,.32); border:1px solid rgba(255,255,255,.14); white-space:nowrap;}
 .credit b {color:#5eead4; font-weight:700;}
 .credit a {color:#5eead4 !important; font-weight:700; text-decoration:none;}
 .credit a:hover {text-decoration:underline;}
-@media (max-width:700px) {.credit {right:12px; bottom:62px; font-size:11.5px; padding:7px 13px;}}
+@media (max-width:700px) {.credit {right:12px; bottom:62px; font-size:11.5px; padding:7px 13px;}
+                          .hero {padding:22px 20px;} .hero h1 {font-size:26px;} .main-card .v {font-size:34px;}}
 
-/* Judul bagian */
-.sect {font-size:15px; font-weight:700; color:#0f172a; margin:0 0 2px 0;}
-.sub {font-size:12.5px; color:#64748b; margin:0 0 6px 0;}
-
-/* Container, tab */
-[data-testid="stVerticalBlockBorderWrapper"] {border-radius:16px;}
-.stTabs [data-baseweb="tab-list"] {gap:4px; border-bottom:1px solid #e2e8f0;}
-.stTabs [data-baseweb="tab"] {padding:10px 18px; font-weight:600; color:#64748b; border-radius:10px 10px 0 0;}
-.stTabs [aria-selected="true"] {color:#0f766e;}
-.stTabs [data-baseweb="tab-highlight"] {background-color:#0f766e;}
-
-/* Sidebar */
-.side-title {font-size:19px; font-weight:800; color:#0b1f3a; letter-spacing:-.01em; margin-bottom:2px;}
-.side-sec {font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#0f766e; font-weight:700; margin:20px 0 4px 0;}
-.disc {font-size:12px; color:#64748b; line-height:1.65; border-top:1px solid #e2e8f0; margin-top:32px; padding-top:16px;}
+.disc {font-size:12px; color:#64748b; line-height:1.7; background:#fff; border:1px solid #e3e9f3; border-radius:16px; margin-top:34px; padding:16px 20px;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -144,16 +179,21 @@ def short(x):
     return f"{sign}Rp {idn(a,0)}"
 
 
+ACCENT = {"#dbeafe": "#2563eb", "#ede9fe": "#7c3aed", "#dcfce7": "#16a34a", "#fef3c7": "#f59e0b"}
+
+
 def kpi(label, value, sub="", icon="💰", bg="#ecfeff", cls=""):
-    return (f'<div class="kpi {cls}"><div class="top"><div class="ic" style="background:{bg}">{icon}</div>'
+    ac = ACCENT.get(bg, "#0f766e")
+    return (f'<div class="kpi {cls}" style="--ac:{ac}; background:linear-gradient(180deg,{bg}99 0%,#ffffff 62%)">'
+            f'<div class="top"><div class="ic" style="background:{bg}">{icon}</div>'
             f'<div class="l">{label}</div></div><div class="v">{value}</div><div class="s">{sub}</div></div>')
 
 
 def progress(label, used, total, hint=""):
     p = 0 if total == 0 else min(used / total, 1) * 100
-    warna = GREEN if p < 70 else (AMBER if p < 95 else RED)
+    g1, g2 = ("#34d399", "#059669") if p < 70 else (("#fcd34d", "#f59e0b") if p < 95 else ("#fb7185", "#e11d48"))
     return (f'<div class="prog"><div class="t">{label}<span>{hint}</span></div>'
-            f'<div class="bar"><i style="width:{p:.1f}%; background:{warna}"></i></div></div>')
+            f'<div class="bar"><i style="width:{p:.1f}%; background:linear-gradient(90deg,{g1},{g2})"></i></div></div>')
 
 
 def show_chart(fig):
@@ -176,7 +216,7 @@ def style(fig, h=330, ytitle=None, legend=True):
         template="plotly_white", height=h, margin=dict(l=4, r=8, t=40 if legend else 12, b=4),
         font=dict(family="Inter, Segoe UI, sans-serif", size=12, color="#334155"),
         legend=dict(orientation="h", yanchor="bottom", y=1.0, x=0, font=dict(size=12)) if legend else dict(visible=False),
-        showlegend=legend, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        showlegend=legend, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(241,245,249,.55)",
         separators=",.", hoverlabel=dict(bgcolor="white", font_size=12, bordercolor="#e2e8f0"), bargap=0.28,
         dragmode=False)   # kunci zoom/geser agar tampilan tidak berubah tanpa sengaja
     fig.update_xaxes(showgrid=False, linecolor="#e2e8f0", tickfont=dict(size=11), fixedrange=True)
@@ -327,9 +367,9 @@ with t1:
         with st.container(border=True):
             card_title("Omzet dan laba per bulan", "Dalam juta rupiah")
             fig = go.Figure()
-            fig.add_trace(go.Bar(x=df.Bulan, y=df.Omzet / 1e6, name="Omzet", marker_color="#93c5fd",
+            fig.add_trace(go.Bar(x=df.Bulan, y=df.Omzet / 1e6, name="Omzet", marker_color="#818cf8",
                                  hovertemplate="%{x}<br>Omzet: Rp %{y:,.1f} jt<extra></extra>"))
-            fig.add_trace(go.Bar(x=df.Bulan, y=df.Laba_Sebelum_Pajak / 1e6, name="Laba sebelum pajak", marker_color=TEAL,
+            fig.add_trace(go.Bar(x=df.Bulan, y=df.Laba_Sebelum_Pajak / 1e6, name="Laba sebelum pajak", marker_color="#14b8a6",
                                  hovertemplate="%{x}<br>Laba: Rp %{y:,.1f} jt<extra></extra>"))
             fig.update_layout(barmode="group")
             show_chart(style(fig, ytitle="Juta Rp"))
@@ -337,9 +377,9 @@ with t1:
         with st.container(border=True):
             card_title("Pajak per bulan", "Dalam ribu rupiah")
             fig = go.Figure()
-            fig.add_trace(go.Bar(x=df.Bulan, y=df.PPh_Final / 1e3, name="PPh final", marker_color=RED,
+            fig.add_trace(go.Bar(x=df.Bulan, y=df.PPh_Final / 1e3, name="PPh final", marker_color="#f43f5e",
                                  hovertemplate="%{x}<br>PPh final: Rp %{y:,.0f} rb<extra></extra>"))
-            fig.add_trace(go.Bar(x=df.Bulan, y=df.PPh22_Dipungut / 1e3, name="PPh 22 dipungut", marker_color=AMBER,
+            fig.add_trace(go.Bar(x=df.Bulan, y=df.PPh22_Dipungut / 1e3, name="PPh 22 dipungut", marker_color="#fbbf24",
                                  hovertemplate="%{x}<br>PPh 22: Rp %{y:,.0f} rb<extra></extra>"))
             fig.update_layout(barmode="group")
             if (df.PPh_Final.sum() + df.PPh22_Dipungut.sum()) == 0:
@@ -351,9 +391,9 @@ with t1:
     with a:
         with st.container(border=True):
             card_title("Ke mana perginya omzet Anda?", "Struktur biaya, pajak, dan laba bersih")
-            komponen = [("HPP", tot.HPP, "#94a3b8"), ("Biaya marketplace", tot.Biaya_Marketplace, "#fb923c"),
-                        ("Iklan", tot.Iklan, VIOLET), ("Biaya tetap", tot.Biaya_Tetap, "#64748b"),
-                        ("Pajak", h["pajak_tahun"], RED), ("Laba bersih", max(0, h["laba_bersih"]), GREEN)]
+            komponen = [("HPP", tot.HPP, "#6366f1"), ("Biaya marketplace", tot.Biaya_Marketplace, "#fb923c"),
+                        ("Iklan", tot.Iklan, "#a855f7"), ("Biaya tetap", tot.Biaya_Tetap, "#38bdf8"),
+                        ("Pajak", h["pajak_tahun"], "#f43f5e"), ("Laba bersih", max(0, h["laba_bersih"]), "#10b981")]
             komponen = sorted(komponen, key=lambda z: z[1])
             total_o = max(h["total_omzet"], 1)
             fig = go.Figure(go.Bar(
